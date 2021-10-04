@@ -1,0 +1,51 @@
+
+# .vimrc
+
+set updatetime=100		" ms to wait for updating, usefulfor vim-gitgutter plugin
+set nocompatible		" Disable compatibility with vi which can cause unexpected issues.
+filetype on				" Enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype plugin on		" Enable plugins and load plugin for the detected file type.
+filetype indent on		" Load an indent file for the detected file type.
+syntax on				" Turn syntax highlighting on.
+set number				" Add numbers to each line on the left-hand side.
+set nocursorline		" Highlight cursor line underneath the cursor horizontally.
+set nocursorcolumn		" Highlight cursor line underneath the cursor vertically.
+set shiftwidth=4		" Set shift width to 4 spaces.
+set tabstop=4			" Set tab width to 4 columns.
+set noexpandtab			" Use space characters instead of tabs.
+set nobackup			" Do not save backup files.
+set scrolloff=5			" Do not let cursor scroll below or above N number of lines when scrolling.
+set nowrap				" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set incsearch			" While searching though a file incrementally highlight matching characters as you type.
+set ignorecase			" Ignore capital letters during search.
+set showcmd				" Show partial command you type in the last line of the screen.
+set noshowmode			" Show the mode you are on the last line.
+set smartcase			" Override the ignorecase option if searching for capital letters.
+set showmatch			" Show matching words during a search.
+set hlsearch			" Use highlighting when doing a search.
+set history=1000		" Set the commands to save in history default number is 20.
+set wildmenu			" Enable auto completion menu after pressing TAB.
+set wildmode=list:longest	" Make wildmenu behave like similar to Bash completion.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx		" Wildmenu will ignore files with these extensions.
+
+"Plug 'itchyny/lightline.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
+" lightline
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+
+call plug#end()
+
+" lightline
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+
