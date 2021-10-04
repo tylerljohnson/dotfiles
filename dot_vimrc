@@ -1,5 +1,5 @@
 
-# .vimrc
+" .vimrc
 
 set updatetime=100		" ms to wait for updating, usefulfor vim-gitgutter plugin
 set nocompatible		" Disable compatibility with vi which can cause unexpected issues.
