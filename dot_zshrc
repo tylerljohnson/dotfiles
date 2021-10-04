@@ -1,0 +1,58 @@
+
+# #####################################
+# Exports
+# #####################################
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+export TERM=xterm-256color
+
+# enable ls color output
+export CLICOLOR=1
+
+# history 
+export HISTFILE="${HOME}/.zsh_history"
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+# zsh syntax highlighting
+source /usr/local/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# #####################################
+# Prompt
+# #####################################
+#
+# pure prompt
+autoload -U promptinit; promptinit
+prompt pure
+
+
+# #####################################
+# Aliases
+# #####################################
+
+alias inbox='java -jar ~/bin/inbox.jar'
+alias ur='inbox count -u'
+
+# #####################################
+# Functions
+# #####################################
+
+# brew update function
+function bu() {
+	brew update --quiet && brew outdated --verbose
+}
+
+# brew update then upgrade
+function bubu() {
+	brew update --quiet && brew upgrade --quiet --display-times --ignore-pinned
+}
+

@@ -1,0 +1,32 @@
+
+export PATH=$(brew --prefix openssl)/bin:$PATH
+
+# git command autocompletion script
+source ~/bin/git-completion.bash
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+#PS1='[\u@\h \W]\$ ‘  # Default
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+
+alias grep='grep --color=auto'
+alias mdp='cd ~/src/mdp/'
+
+#export GIT_PS1_SHOWDIRTYSTATE=1
+
+
+# git bash prompt
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+eval "$(rbenv init -)"
+
